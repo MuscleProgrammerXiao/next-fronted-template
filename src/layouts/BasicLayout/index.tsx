@@ -1,4 +1,5 @@
 "use client";
+import GloabeFooter from "@/components/GlobalFooter";
 import {
   GithubFilled,
   LogoutOutlined,
@@ -8,8 +9,8 @@ import { ProLayout } from "@ant-design/pro-components";
 import { Dropdown, Input } from "antd";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
-
+import { menus } from "../../../config/menu";
+import style from "./index.module.scss";
 /**
  * 搜索条
  * @returns
@@ -48,14 +49,15 @@ interface Props {
 export default function BasicLayout({ children }: Props) {
   const pathname = usePathname();
   return (
-    <main
-      id="basicLayout"
+    <div
+      className={style.basicLayouts}
       style={{
         height: "100vh",
         overflow: "auto",
       }}
     >
       <ProLayout
+        style={{ height: "100vh" }}
         title="basic layout"
         layout="top"
         location={{ pathname }}
@@ -108,43 +110,20 @@ export default function BasicLayout({ children }: Props) {
           if (_.isMobile) return defaultDom;
           return <>{defaultDom}</>;
         }}
-        menuFooterRender={(props) => {
-          if (props?.collapsed) return undefined;
-          return (
-            <div
-              style={{
-                textAlign: "center",
-                paddingBlockStart: 12,
-              }}
-            >
-              <div>© 2021 Made with love</div>
-              <div>by Ant Design</div>
-            </div>
-          );
-        }}
         onMenuHeaderClick={(e) => console.log(e)}
         //定义有哪些菜单
-        menuDataRender={() => {
-          return [
-            {
-              path: "/questions",
-              name: "题目",
-            },
-            {
-              path: "/banks",
-              name: "题库",
-            },
-          ];
-        }}
+        menuDataRender={() => menus}
         // 定义了菜单项如何渲染
         menuItemRender={(item, dom) => (
           <Link href={item.path || "/"} target={item.target}>
             {dom}
           </Link>
         )}
+        // 渲染底部栏
+        footerRender={() => <GloabeFooter />}
       >
         {children}
       </ProLayout>
-    </main>
+    </div>
   );
 }
