@@ -1,7 +1,6 @@
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import BasicLayout from '@/layouts/BasicLayout';
 import '../assets/globals.scss';
-
 export default function RootLayout({
 	children,
 }: Readonly<{
