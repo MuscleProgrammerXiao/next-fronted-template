@@ -59,7 +59,7 @@ export default function BasicLayout({ children }: Props) {
 			<ProLayout
 				title="面试鸭刷题平台"
 				layout="top"
-				logo={<Image src="/assets/logo.gif" width={32} height={32} alt="面试鸭刷题网站" />}
+				logo={<Image src="/assets/logo.gif" unoptimized width={32} height={32} alt="面试鸭刷题网站" />}
 				location={{ pathname }}
 				avatarProps={{
 					src: '/assets/notLoginUser.png',
