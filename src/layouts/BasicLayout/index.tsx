@@ -8,7 +8,8 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 import { menus } from '../../../config/menu';
-
+import { useSelector } from 'react-redux';
+import { RootState } from '@/stores';
 import GloabeFooter from '@/components/GlobalFooter';
 import './index.css';
 
@@ -54,6 +55,9 @@ interface Props {
  */
 export default function BasicLayout({ children }: Props) {
 	const pathname = usePathname();
+	const loginUser = useSelector((state: RootState) => state.loginUser);
+	console.log(loginUser);
+
 	return (
 		<div id="basicLayout">
 			<ProLayout

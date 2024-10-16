@@ -2,6 +2,8 @@
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import BasicLayout from '@/layouts/BasicLayout';
 import React, { useCallback, useEffect } from 'react';
+import { Provider } from 'react-redux';
+import store from '@/stores';
 import '../assets/globals.css';
 
 /**
@@ -36,7 +38,9 @@ export default function RootLayout({
 			<body>
 				<AntdRegistry>
 					<InitLayout>
-						<BasicLayout>{children}</BasicLayout>
+						<Provider store={store}>
+							<BasicLayout>{children}</BasicLayout>
+						</Provider>
 					</InitLayout>
 				</AntdRegistry>
 			</body>
