@@ -66,9 +66,9 @@ export default function BasicLayout({ children }: Props) {
 				logo={<Image src="/assets/logo.gif" unoptimized width={32} height={32} alt="面试鸭刷题网站" />}
 				location={{ pathname }}
 				avatarProps={{
-					src: '/assets/notLoginUser.png',
+					src: loginUser.userAvatar || '/assets/logo.png',
 					size: 'small',
-					title: 'xiao',
+					title: loginUser.userName || 'xiao',
 					render: (props, dom) => {
 						return (
 							<Dropdown

@@ -1,6 +1,9 @@
 'use client';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/stores';
 import style from './page.module.scss';
 export default function Page() {
+	const loginUser = useSelector((state: RootState) => state.loginUser);
 	return (
 		<main className={style.page}>
 			<header
@@ -23,7 +26,7 @@ export default function Page() {
 					</div>
 				</nav>
 			</header>
-			<main>main</main>
+			<main>{JSON.stringify(loginUser)}</main>
 			<footer>footer</footer>
 		</main>
 	);

@@ -1,26 +1,36 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+type LoginUserVO = {
+	createTime?: string;
+	id?: number;
+	updateTime?: string;
+	userAvatar?: string;
+	userName?: string;
+	userProfile?: string;
+	userRole?: string;
+};
 
 // 默认用户
-const DEFAULT_USER: API.LoginUserVO = {
-  userName: "未登录",
-  userProfile: "暂无简介",
-  userAvatar: "/assets/notLoginUser.png",
-  userRole: "guest",
+const DEFAULT_USER: LoginUserVO = {
+	userName: '未登录',
+	userProfile: '暂无简介',
+	userAvatar: '/assets/notLoginUser.png',
+	userRole: 'guest',
 };
 
 /**
  * 登录用户全局状态
  */
 export const loginUserSlice = createSlice({
-  name: "loginUser",
-  initialState: DEFAULT_USER,
-  reducers: {
-    setLoginUser: (state, action: PayloadAction<API.LoginUserVO>) => {
-      return {
-        ...action.payload,
-      };
-    },
-  },
+	name: 'loginUser',
+	initialState: DEFAULT_USER,
+	reducers: {
+		setLoginUser: (state, action: PayloadAction<LoginUserVO>) => {
+			return {
+				...action.payload,
+			};
+		},
+	},
 });
 
 // 修改状态
