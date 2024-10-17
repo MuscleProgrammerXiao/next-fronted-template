@@ -11,6 +11,8 @@ import { menus } from '../../../config/menu';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/stores';
 import GloabeFooter from '@/components/GlobalFooter';
+import getAccessibleMenus from '@/access/menuAcess';
+
 import './index.css';
 
 /**
@@ -106,7 +108,7 @@ export default function BasicLayout({ children }: Props) {
 				footerRender={() => <GloabeFooter />}
 				onMenuHeaderClick={(e) => console.log(e)}
 				//定义有哪些菜单
-				menuDataRender={() => menus}
+				menuDataRender={() => getAccessibleMenus(loginUser, menus)}
 				// 定义了菜单项如何渲染
 				menuItemRender={(item, dom) => (
 					<Link href={item.path || '/'} target={item.target}>

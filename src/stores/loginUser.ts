@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
+import ACCESS_ENUM from '@/access/accessEnum';
 type LoginUserVO = {
 	createTime?: string;
 	id?: number;
@@ -15,7 +15,7 @@ const DEFAULT_USER: LoginUserVO = {
 	userName: '未登录',
 	userProfile: '暂无简介',
 	userAvatar: '/assets/notLoginUser.png',
-	userRole: 'guest',
+	userRole: ACCESS_ENUM.NOT_LOGIN,
 };
 
 /**
