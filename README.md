@@ -102,11 +102,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="cn">
-			     {' '}
 			<body>
-				        <AntdRegistry>{children}</AntdRegistry>     {' '}
+				<AntdRegistry>{children}</AntdRegistry>   
 			</body>
-			   {' '}
 		</html>
 	);
 }
