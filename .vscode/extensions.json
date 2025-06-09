@@ -1,12 +1,20 @@
 {
-  "recommendations": [
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "stylelint.vscode-stylelint",
-    "bradlc.vscode-tailwindcss",
-    "ms-vscode.vscode-typescript-next",
-    "formulahendry.auto-rename-tag",
-    "christian-kohler.path-intellisense",
-    "ms-vscode.vscode-json"
-  ]
+    "recommendations": [
+        // 将 ESLint JavaScript 集成到 VS Code 中。
+        "dbaeumer.vscode-eslint",
+        // Visual Studio Code 的官方 Stylelint 扩展
+        "stylelint.vscode-stylelint",
+        // 使用 Prettier 的代码格式化程序
+        "esbenp.prettier-vscode",
+        // 支持 dotenv 文件语法
+        "mikestead.dotenv",
+        // Tailwind CSS 的官方 VS Code 插件
+        "bradlc.vscode-tailwindcss",
+        // CSS 变量提示
+        "vunguyentuan.vscode-css-variables",
+        // 在 package.json 中显示 PNPM catalog 的版本
+        "antfu.pnpm-catalog-lens",
+        // prisma
+        "prisma.prisma"
+    ]
 }
